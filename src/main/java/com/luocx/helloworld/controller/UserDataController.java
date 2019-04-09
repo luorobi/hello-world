@@ -1,13 +1,10 @@
 package com.luocx.helloworld.controller;
 
-import com.luocx.helloworld.entity.User;
 import com.luocx.helloworld.entity.UserData;
 import com.luocx.helloworld.service.UserDataService;
-import com.luocx.helloworld.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class UserDataController {
     @Autowired
     UserDataService userService;
 
-    @ApiOperation(value = "用户列表",  notes = "用户列表")
+    @ApiOperation(value = "用户列表",  notes = "用户列表")//描述接口
     @RequestMapping(value = {""}, method = RequestMethod.GET)
     public List<UserData> getAllUsers(){
         List<UserData> userDataList = userService.findAll();

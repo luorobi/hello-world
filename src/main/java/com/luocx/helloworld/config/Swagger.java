@@ -32,7 +32,7 @@ public class Swagger {
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 .title("Springboot利用Swagger构建api文档")
-                .description("简单优雅的Restful风格，https://github.com/luorobi")
+                .description("简单优雅的Restful风格")
                 .termsOfServiceUrl("https://github.com/luorobi")
                 .version("1.0")
                 .build();

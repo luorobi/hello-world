@@ -1,5 +1,8 @@
 package com.luocx.helloworld.config;
 
+import com.luocx.helloworld.entity.SwaggerBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.RequestHandler;
@@ -19,6 +22,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger {
+
+    @Autowired
+    SwaggerBean swaggerBean;
+
+
     @Bean
     public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
@@ -31,10 +39,10 @@ public class Swagger {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("Springboot利用Swagger构建api文档")
-                .description("简单优雅的Restful风格")
-                .termsOfServiceUrl("https://github.com/luorobi")
-                .version("1.0")
+                .title(swaggerBean.getTitle())
+                .description(swaggerBean.getDescription())
+                .termsOfServiceUrl(swaggerBean.getTermsOfServiceUrl())
+                .version(swaggerBean.getVersion())
                 .build();
     }
 }

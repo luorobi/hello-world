@@ -28,3 +28,8 @@ spring:
     port: 6379
     password:
     database: 1
+swagger:
+  title: Springboot利用Swagger构建api文档
+  description: 简单优雅的Restful风格
+  termsOfServiceUrl: https://github.com/luorobi
+  version: 1.0

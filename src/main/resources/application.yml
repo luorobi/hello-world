@@ -1,0 +1,30 @@
+my:
+  name: luocx
+  age: 29
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  vaule: ${random.value}
+  greeting: hi,I am ${name}
+
+management:
+  server:
+    port: 9001
+  endpoint:
+    health:
+      enabled: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hello_world?userUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update #有更新，没有创建
+    show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 1
